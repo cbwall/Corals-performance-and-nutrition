@@ -1,11 +1,10 @@
 #this is script for the master data from pansa/chris coral project
-#this is pansa's first r script
-#please be patient
+#this is pansa's first r script, pansa is also patient
+#please be patient (as is Pansa)
 
 rm(list=ls())
 getwd()
-setwd("C:/Users/Pansa/Documents")
-data=read.csv("pansa r/data/masterdata.csv")
+data=read.csv("data/masterdata.csv")
 head(data)
 str(data)
 
