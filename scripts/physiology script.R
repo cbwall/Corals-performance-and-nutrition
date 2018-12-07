@@ -29,7 +29,6 @@ cells=data$cells
 
 #created shortcuts to  reference data
 
-rownames(data)<-as.character(data$ID) #renamed rows to coral ID for easier access
 
 Boxplot(cells~data$treatment, 
      col="lightblue", 
