@@ -4,6 +4,7 @@
 
 rm(list=ls())
 getwd()
+library(car)
 data=read.csv("data/masterdata.csv")
 head(data)
 str(data)
@@ -30,37 +31,37 @@ cells=data$cells
 
 rownames(data)<-as.character(data$ID) #renamed rows to coral ID for easier access
 
-plot(cells~data$treatment, 
+Boxplot(cells~data$treatment, 
      col="lightblue", 
      ylab="symbiont cells/cm2", 
      xlab="Treatment code",
      main="Symbiont Cells by Treatment")
 
 par(mfrow=c(1,3), oma=c(10,4,2,1), pty="sq") #mar is bottom, left, top, right, oma specifies where title
-plot(chl~data$temperature,
+Boxplot(chl~data$temperature,
      col="010203",
      ylab="chlorophyll(ug/cm2)",
      xlab="Temperature")
-plot(chl~data$light,
+Boxplot(chl~data$light,
      col="lightyellow",
      ylab="chlorophyll(ug/cm2)",
      xlab="Light")
-plot(chl~data$feeding,
+Boxplot(chl~data$feeding,
      col="334421",
      ylab="chlorophyll(ug/cm2)",
      xlab="Feed")
 title("Chlorophyll Concentration", outer=TRUE)
 
 par(mfrow=c(1,3), oma=c(10,4,2,1), pty="sq") #mar is bottom, left, top, right, oma specifies where title
-plot(cells~data$temperature,
+Boxplot(cells~data$temperature,
      col="010203",
      ylab="Cells/cm2",
      xlab="Temperature")
-plot(cells~data$light,
+Boxplot(cells~data$light,
      col="lightyellow",
      ylab="Cells/cm2",
      xlab="Light")
-plot(cells~data$feeding,
+Boxplot(cells~data$feeding,
      col="334421",
      ylab="Cells/cm2",
      xlab="Feed")
