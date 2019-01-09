@@ -69,4 +69,37 @@ max(cells)
 
 max(chl) #this value is abnormal in the context of the plot
 
-      
+#below are edits to the data based on recounts 
+data2<-data #created a second data set based on the original where revised data will be stored. 
+data2$cells.ml[24]<-1727500
+data2$cells[24]<-3160670
+data2$cells.ml[46]<-2515000
+data2$cells[46]<-3539214
+data2$cells.ml[70]<-1620000
+data2$cells[70]<-2452176
+data2$cells.ml[94]<-2358333.33333
+data2$cells[94]<-4872019 #changed values of recounted cells in the matrix
+cells2<-data2$cells
+cells.ml2<-data2$cells.ml
+chl2<-data2$chlorophyll
+
+Boxplot(cells2~data2$treatment, 
+        col="lightblue", 
+        ylab="symbiont cells/cm2", 
+        xlab="Treatment code",
+        main="Symbiont Cells by Treatment revised") #created plots using second dataset
+
+par(mfrow=c(1,3), oma=c(10,4,2,1), pty="sq") #mar is bottom, left, top, right, oma specifies where title
+Boxplot(cells2~data2$temperature,
+        col="010203",
+        ylab="Cells/cm2",
+        xlab="Temperature")
+Boxplot(cells2~data2$light,
+        col="lightyellow",
+        ylab="Cells/cm2",
+        xlab="Light")
+Boxplot(cells2~data2$feeding,
+        col="334421",
+        ylab="Cells/cm2",
+        xlab="Feed")
+title("Cell Concentration revised", outer=TRUE)
