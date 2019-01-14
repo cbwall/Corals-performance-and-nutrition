@@ -12,6 +12,18 @@ str(data)
 data$displacement..ml=as.numeric(data$displacement..ml) #get displacement to be numeric
 str(data)
 
+data$chla..ug.ml[24]<-3.704
+data$chla..ug.ml[94]<-4.081
+data$chla..ug.ml[50]<-3.538
+data$chla..ug.ml[53]<-4.579
+
+data$chlc2..ug.ml[24]<-0.648
+data$chlc2..ug.ml[94]<-0.655
+data$chlc2..ug.ml[50]<-0.696
+data$chlc2..ug.ml[53]<-0.616
+#changed values of abnormally high data after retesting
+
+
 data$chla=as.numeric(data$chla..ug.ml*data$blastate..ml/data$surface.area..cm2)
 data$chla
 data$chlc2=as.numeric(data$chlc2..ug.ml*data$blastate..ml/data$surface.area..cm2)
@@ -81,7 +93,7 @@ data2$cells.ml[94]<-2358333.33333
 data2$cells[94]<-4872019 #changed values of recounted cells in the matrix
 cells2<-data2$cells
 cells.ml2<-data2$cells.ml
-chl2<-data2$chlorophyll
+
 
 Boxplot(cells2~data2$treatment, 
         col="lightblue", 
